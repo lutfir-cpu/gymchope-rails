@@ -27,11 +27,13 @@ You will need the following pre-installed
 
  Step 3: Run `rails s` to start backend server
 
- Step 4: On another tab of the terminal, change your directory to gymchope-rails/frontend via `cd frontend`
+ Step 4: Run `rails db:migrate' and 'bundle install' to set up the database and dependencies resepctively
 
- Step 5: Install npm dependencies, `npm install`
+ Step 5: On another tab of the terminal, change your directory to gymchope-rails/frontend via `cd frontend`
 
- Step 6: Finally, run the website `npm run dev`
+ Step 6: Install npm dependencies, `npm install`
+
+ Step 7: Finally, run the website `npm run dev`
 
  ## To edit
 
