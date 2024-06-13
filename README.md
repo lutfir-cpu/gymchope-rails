@@ -1,24 +1,45 @@
-# README
+# How To Run Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You will need the following pre-installed
+- Ruby
+- Rails
 
-Things you may want to cover:
+ ## Ruby installation
+ Step 1: Download Ruby from rubyinstaller.org [Ruby+Devkit 3.3.X (x64) version]
 
-* Ruby version
+ Step 2: Check that you have ruby installed, in you terminal type
+ `ruby -v`
 
-* System dependencies
+ ## Rails installation
 
-* Configuration
+ Step 1: To install Rails, you can type the following in your terminal
+ `gem install rails`
 
-* Database creation
+ Step 2: Check that you have ruby installed, in you terminal type
+ `rails -v`
 
-* Database initialization
+ ## Running the Website
 
-* How to run the test suite
+ Step 1: Download all files from github
 
-* Services (job queues, cache servers, search engines, etc.)
+ Step 2: On your terminal, change your directory to gymchope-rails
+ `cd gymchope-rails`
 
-* Deployment instructions
+ Step 3: Run `rails s` to start backend server
 
-* ...
+ Step 4: On another tab of the terminal, change your directory to gymchope-rails/frontend via `cd frontend`
+
+ Step 5: Install npm dependencies, `npm install`
+
+ Step 6: Finally, run the website `npm run dev`
+
+ ## To edit
+
+ Step 1: Change directory to gymchope-rails
+
+ Step 2: Type `code .` on your terminal.
+
+ 
+ 
+
+ 
