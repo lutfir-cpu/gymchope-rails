@@ -27,7 +27,7 @@ You will need the following pre-installed
 
  Step 3: Run `rails s` to start backend server
 
- Step 4: Run `rails db:migrate' and 'bundle install' to set up the database and dependencies resepctively
+ Step 4: Run `rails db:migrate` and `bundle install` to set up the database and dependencies resepctively
 
  Step 5: On another tab of the terminal, change your directory to gymchope-rails/frontend via `cd frontend`
 
