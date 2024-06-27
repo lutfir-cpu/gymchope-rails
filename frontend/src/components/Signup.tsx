@@ -1,9 +1,27 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
+import axios from "axios";
 
 const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        axios.post("http://localhost:3000/users", {
+            user: {
+                email: email,
+                password: password,
+            }
+        },
+        ).then(response => {
+            console.log("reg res: ", response);
+        }).catch(error => {
+            console.log("reg error: ", error)
+        })
+    }
+
 
     return (
         <div className={'mainContainer'}>
@@ -11,7 +29,7 @@ const Signup = () => {
             <div>Create Your Account</div>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
             {/*Username*/}
             <div className={"input-container"}>
                 <input
