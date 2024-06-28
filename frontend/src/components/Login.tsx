@@ -1,11 +1,40 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
     const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [tried_logging_in, setLogIn] = useState(false);
 
     const navigateToSignUp = () => {
         navigate('/signup');
     };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        axios.post("http://localhost:3000/sessions", {
+            user: {
+                email: email,
+                password: password,
+            }
+        },
+        ).then(response => {
+            console.log("response: " + response.data.logged_in);
+            console.log("response: " + response.data.status);
+            if (response.data && response.data.logged_in) {
+                navigate("home-page");
+            } else {
+                setLogIn(true);
+            }
+        }).catch(error => {
+            console.log("reg error: ", error)
+            setLogIn(true);
+        })
+    }
+    
 
     return(
       <div className={'mainContainer'}>
@@ -15,6 +44,46 @@ const Login = () => {
                 <h2>Login</h2>
               </div>
           </div>
+
+          <form onSubmit={handleSubmit}>
+                {/*Username*/}
+                <div className={"input-container"}>
+                    <input
+                        type={"email"}
+                        value={email}
+                        placeholder={"Enter your email"}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className={"input-box"}
+                    />
+                </div>
+
+                {/*Password*/}
+                    <div className={'input-container'}>
+                    <input
+                        type={"password"}
+                        value={password}
+                        placeholder={"Enter your password"}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        className={"input-box"}
+                    />
+                </div>
+
+                {/*Signup button*/}
+                <div className={'input-container'}>
+                    <button
+                        type={"submit"}
+                        value={"Log In"}
+                        className={'inputButton'}
+                    >Log In
+                    </button>
+                </div>
+
+                <div>
+                    <p>{tried_logging_in ? 'Error with logging in...' : ''}</p>
+                </div>
+          </form>
 
           <div className={"create-option"}>
               <p>------or create an account------</p>

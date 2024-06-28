@@ -15,7 +15,7 @@ const HomePage = () => {
                 <table className="notifications-table">
                     <tbody>
                     <tr>
-                        <td colspan='3'>No notifications available.</td>
+                        <td>No notifications available.</td>
                     </tr>
                     </tbody>
                 </table>
